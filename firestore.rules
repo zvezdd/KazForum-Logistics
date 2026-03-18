@@ -1,0 +1,11 @@
+rules_version = '2';
+// Registration form: allow public to CREATE documents in "registrations" only.
+// See FIRESTORE_RULES_README.md for how to apply these rules in Firebase Console.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /registrations/{docId} {
+      allow create: if true;
+      allow read, update, delete: if false;
+    }
+  }
+}
