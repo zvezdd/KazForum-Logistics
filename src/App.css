@@ -40,7 +40,13 @@ body {
 /* —— Header: на всю ширину —— */
 .header {
   width: 100%;
-  background: linear-gradient(135deg, #006ba8 0%, #0083ca 50%, #0099e6 100%);
+  height: 457px;
+  background:
+    linear-gradient(rgba(10, 22, 35, 0.58), rgba(10, 22, 35, 0.58)),
+    url('/hero-logistics.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: #fff;
   padding: 2rem 0 2.5rem;
   text-align: center;
@@ -299,7 +305,8 @@ body {
   border-radius: 12px;
   padding: 1.25rem;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-  max-width: 44rem;
+  width: 100%;
+  max-width: none;
 }
 
 .registration-form {
