@@ -2,24 +2,25 @@ import { useState } from 'react'
 import { ContactForm } from './components/ContactForm'
 import './App.css'
 
-const PROGRAM_RU_URL = '/program-ru.pptx'
-const PROGRAM_EN_URL = '/program-en.pptx'
+const PROGRAM_URL: Record<'ru' | 'en' | 'kz', string> = {
+  ru: '/program-ru.pptx',
+  en: '/program-en.pptx',
+  kz: '/program-kz.pptx',
+}
 
 const t = {
   ru: {
     headerTitle: 'Казахстанско-Германский форум',
     headerSlogan: 'Цифровизация, человеческий потенциал, транзитные возможности',
     programTitle: 'Программа форума',
-    programDesc: 'Скачайте программу на русском или английском языке.',
-    downloadRu: 'Скачать программу (RU)',
-    downloadEn: 'Скачать программу (EN)',
+    programDesc: 'Скачайте приглашение на форум.',
+    downloadBtn: 'Скачать приглашение (RU)',
     registrationTitle: 'Регистрация',
     registrationDesc: 'Для участия в форуме заполните форму регистрации.',
     partnersTitle: 'Партнёры',
     partnersAlt: 'Партнёры форума',
     directionsTitle: 'Схема проезда',
     directionsAddress: 'Satbayev University, конференц-зал, ул. Сатпаева, 22, г. Алматы',
-    directionsPlaceholder: 'Фото / карта',
     contactsTitle: 'Контакты',
     contactPerson: 'Контактное лицо:',
     tel: 'Тел:',
@@ -30,26 +31,42 @@ const t = {
     headerTitle: 'Kazakhstan–Germany Forum',
     headerSlogan: 'Digitalization, human potential, transit opportunities',
     programTitle: 'Forum programme',
-    programDesc: 'Download the programme in Russian or English.',
-    downloadRu: 'Download programme (RU)',
-    downloadEn: 'Download programme (EN)',
+    programDesc: 'Download the forum invitation.',
+    downloadBtn: 'Download invitation (EN)',
     registrationTitle: 'Registration',
     registrationDesc: 'To take part in the forum, please fill in the registration form.',
     partnersTitle: 'Partners',
     partnersAlt: 'Forum partners',
     directionsTitle: 'How to get there',
     directionsAddress: 'Satbayev University, conference hall, 22 Satpayev St., Almaty',
-    directionsPlaceholder: 'Photo / map',
     contactsTitle: 'Contacts',
     contactPerson: 'Contact person:',
     tel: 'Phone:',
     whatsapp: 'WhatsApp:',
     email: 'Email:',
   },
+  kz: {
+    headerTitle: 'Қазақстан-Германия форумы',
+    headerSlogan: 'Цифрландыру, адами әлеует, транзиттік мүмкіндіктер',
+    programTitle: 'Форум бағдарламасы',
+    programDesc: 'Форумға шақыруды жүктеп алыңыз.',
+    downloadBtn: 'Шақыруды жүктеу (KZ)',
+    registrationTitle: 'Тіркелу',
+    registrationDesc: 'Форумға қатысу үшін тіркелу нысанын толтырыңыз.',
+    partnersTitle: 'Серіктестер',
+    partnersAlt: 'Форум серіктестері',
+    directionsTitle: 'Жол сызбасы',
+    directionsAddress: 'Satbayev University, конференц-зал, Сатпаев к., 22, Алматы қ.',
+    contactsTitle: 'Байланыс',
+    contactPerson: 'Байланыс тұлғасы:',
+    tel: 'Тел:',
+    whatsapp: 'WhatsApp:',
+    email: 'Email:',
+  },
 } as const
 
 function App() {
-  const [lang, setLang] = useState<'ru' | 'en'>('ru')
+  const [lang, setLang] = useState<'ru' | 'en' | 'kz'>('ru')
   const text = t[lang]
 
   return (
@@ -63,6 +80,7 @@ function App() {
               <div className="lang-tabs lang-tabs--header">
                 <button type="button" className={lang === 'ru' ? 'lang-tab active' : 'lang-tab'} onClick={() => setLang('ru')}>RU</button>
                 <button type="button" className={lang === 'en' ? 'lang-tab active' : 'lang-tab'} onClick={() => setLang('en')}>EN</button>
+                <button type="button" className={lang === 'kz' ? 'lang-tab active' : 'lang-tab'} onClick={() => setLang('kz')}>KZ</button>
               </div>
             </div>
           </div>
@@ -82,9 +100,16 @@ function App() {
           )}
           {lang === 'en' && (
             <div className="info-content">
-              <p>Dear colleagues! We invite you to take part in the Kazakhstan–Germany Transport and Logistics Forum “Digitalization, Human Potential, Transit Opportunities”.</p>
+              <p>Dear colleagues! We invite you to take part in the Kazakhstan–Germany Transport and Logistics Forum "Digitalization, Human Potential, Transit Opportunities".</p>
               <p>The Forum will be held on <strong>14 May 2026</strong> in Almaty at <strong>Satbayev University</strong> (22 Satpayev Street). It will bring together representatives of ministries, universities and transport and logistics companies from Kazakhstan, sector experts from Germany, and organizations from Central Asian countries.</p>
               <p>The event will focus on digitalization of logistics systems, development of human capital and transit potential, and strengthening partnership between science, education and business.</p>
+            </div>
+          )}
+          {lang === 'kz' && (
+            <div className="info-content">
+              <p>Құрметті әріптестер! Сізді «Цифрландыру, адами әлеует, транзиттік мүмкіндіктер» тақырыбындағы Қазақстан-Германия көлік-логистика форумына қатысуға шақырамыз.</p>
+              <p>Форум <strong>2026 жылдың 14 мамырында</strong> Алматы қаласында <strong>Satbayev University</strong> базасында (Сатпаев к., 22) өтеді. Форум Қазақстанның министрліктері, жоғары оқу орындары мен көлік-логистика саласының компаниялары өкілдерін, Германияның салалық сарапшылары мен Орталық Азия елдерінің ұйымдарын біріктіреді.</p>
+              <p>Іс-шара логистикалық жүйелерді цифрландыруды, адами капитал мен транзиттік әлеуетті дамытуды, сондай-ақ ғылым, білім және бизнес арасындағы серіктестікті нығайтуға бағытталған.</p>
             </div>
           )}
         </div>
@@ -94,20 +119,9 @@ function App() {
         <div className="block-inner">
           <h2 className="block-title">{text.programTitle}</h2>
           <p className="block-desc">{text.programDesc}</p>
-          <div className="program-preview">
-            {lang === 'ru' && (
-              <img src="/program-ru-preview.png" alt="Программа форума" className="program-preview-img" />
-            )}
-            {lang === 'en' && (
-              <img src="/program-en-preview.png" alt="Forum programme" className="program-preview-img" />
-            )}
-          </div>
           <div className="download-buttons">
-            <a href={PROGRAM_RU_URL} className="btn btn-download" download>
-              <span className="btn-icon">↓</span> {text.downloadRu}
-            </a>
-            <a href={PROGRAM_EN_URL} className="btn btn-download" download>
-              <span className="btn-icon">↓</span> {text.downloadEn}
+            <a href={PROGRAM_URL[lang]} className="btn btn-download" download>
+              <span className="btn-icon">↓</span> {text.downloadBtn}
             </a>
           </div>
         </div>
@@ -139,6 +153,7 @@ function App() {
           <div className="directions-map">
             {lang === 'ru' && <img src="/map-ru.svg" alt="Схема проезда" className="directions-map-img" />}
             {lang === 'en' && <img src="/map-en.svg" alt="How to get there" className="directions-map-img" />}
+            {lang === 'kz' && <img src="/map-ru.svg" alt="Жол сызбасы" className="directions-map-img" />}
           </div>
         </div>
       </section>

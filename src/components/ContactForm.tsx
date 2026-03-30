@@ -3,7 +3,7 @@ import type { FormEvent } from 'react'
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
 import { db } from '../firebase'
 
-type Lang = 'ru' | 'en'
+type Lang = 'ru' | 'en' | 'kz'
 
 const copy = {
   ru: {
@@ -39,6 +39,24 @@ const copy = {
     phName: 'John Smith',
     phOrg: 'Company / Organization',
     phCountry: 'Kazakhstan',
+    phEmail: 'example@mail.com',
+    phPhone: '+7 705 000 00 00',
+  },
+  kz: {
+    title: 'Форумға тіркелу',
+    name: 'Аты-жөні',
+    org: 'Ұйым',
+    country: 'Ел',
+    email: 'Электрондық пошта',
+    phone: 'Телефон нөмірі',
+    submit: 'Тіркелу',
+    submitting: 'Жіберілуде…',
+    required: 'Барлық өрістерді толтырыңыз.',
+    success: 'Өтінім сәтті жіберілді.',
+    error: 'Қате орын алды. Кейінірек көріңіз.',
+    phName: 'Иванов Иван Иванович',
+    phOrg: 'Ұйым атауы',
+    phCountry: 'Қазақстан',
     phEmail: 'example@mail.com',
     phPhone: '+7 705 000 00 00',
   },
