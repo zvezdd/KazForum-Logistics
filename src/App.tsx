@@ -75,6 +75,7 @@ function App() {
         <div className="header-inner">
           <div className="header-logos">
             <img src="/logo-bvl.png" alt="BVL Chapter Eurasia" className="header-logo header-logo--bvl" />
+            <img src="/logo-german-cooperation.png" alt="German Cooperation" className="header-logo header-logo--gc" />
             <div className="header-right">
               <img src="/logo-satbayev.png" alt="Satbayev University" className="header-logo header-logo--satbayev" />
               <div className="lang-tabs lang-tabs--header">
@@ -119,6 +120,13 @@ function App() {
         <div className="block-inner">
           <h2 className="block-title">{text.programTitle}</h2>
           <p className="block-desc">{text.programDesc}</p>
+          <div className="program-banner">
+            <img
+              src={`/banner-${lang}.png`}
+              alt={text.programTitle}
+              className="program-banner-img"
+            />
+          </div>
           <div className="download-buttons">
             <a href={PROGRAM_URL[lang]} className="btn btn-download" download>
               <span className="btn-icon">↓</span> {text.downloadBtn}
@@ -140,8 +148,13 @@ function App() {
       <section className="block block-partners" id="partners">
         <div className="block-inner">
           <h2 className="block-title">{text.partnersTitle}</h2>
-          <div className="partners-logos">
-            <img src="/partners-logos.png" alt={text.partnersAlt} className="partners-image" />
+          <div className="partners-row">
+            <img src="/logo-ministry.png" alt="Министерство транспорта РК" className="partner-logo" />
+            <img src="/logo-bvl.png" alt="BVL Bundesvereinigung Logistik" className="partner-logo" />
+            <img src="/logo-kidi.png" alt="Kazakhstan Industry Development Institute" className="partner-logo" />
+            <img src="/logo-german-cooperation.png" alt="German Cooperation" className="partner-logo" />
+            {/* <img src="/logo-giz.png" alt="GIZ" className="partner-logo" /> */}
+            <img src="/logo-satbayev.png" alt="Satbayev University" className="partner-logo" />
           </div>
         </div>
       </section>
