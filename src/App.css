@@ -94,7 +94,6 @@ body {
 .header-logo {
   width: auto;
   object-fit: contain;
-  filter: brightness(0) invert(1);
 }
 
 .header-logo--bvl      { height: 70px; }
