@@ -72,11 +72,11 @@ function App() {
   return (
     <div className="app">
       <header className="header">
-        <div className="header-inner">
+        <nav className="header-nav">
           <div className="header-logos">
             <img src="/logo-bvl.png" alt="BVL Chapter Eurasia" className="header-logo header-logo--bvl" />
             <img src="/logo-german-cooperation.png" alt="German Cooperation" className="header-logo header-logo--gc" />
-            <div className="header-right">
+            <div className="header-logos-satbayev">
               <img src="/logo-satbayev.png" alt="Satbayev University" className="header-logo header-logo--satbayev" />
               <div className="lang-tabs lang-tabs--header">
                 <button type="button" className={lang === 'ru' ? 'lang-tab active' : 'lang-tab'} onClick={() => setLang('ru')}>RU</button>
@@ -85,8 +85,16 @@ function App() {
               </div>
             </div>
           </div>
+        </nav>
+        <div className="header-hero">
+          <div className="header-accent" />
           <h1 className="header-title">{text.headerTitle}</h1>
           <p className="header-slogan">{text.headerSlogan}</p>
+          <div className="header-date-badge">
+            {lang === 'ru' && '14 мая 2026 · Алматы, Satbayev University'}
+            {lang === 'en' && '14 May 2026 · Almaty, Satbayev University'}
+            {lang === 'kz' && '2026 жылғы 14 мамыр · Алматы, Satbayev University'}
+          </div>
         </div>
       </header>
 
