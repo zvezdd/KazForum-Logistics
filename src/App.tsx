@@ -76,14 +76,12 @@ function App() {
           <div className="header-logos">
             <img src="/logo-bvl.png" alt="BVL Chapter Eurasia" className="header-logo header-logo--bvl" />
             <img src="/logo-german-cooperation.png" alt="German Cooperation" className="header-logo header-logo--gc" />
-            <div className="header-logos-satbayev">
-              <img src="/logo-satbayev.png" alt="Satbayev University" className="header-logo header-logo--satbayev" />
-              <div className="lang-tabs lang-tabs--header">
-                <button type="button" className={lang === 'ru' ? 'lang-tab active' : 'lang-tab'} onClick={() => setLang('ru')}>RU</button>
-                <button type="button" className={lang === 'en' ? 'lang-tab active' : 'lang-tab'} onClick={() => setLang('en')}>EN</button>
-                <button type="button" className={lang === 'kz' ? 'lang-tab active' : 'lang-tab'} onClick={() => setLang('kz')}>KZ</button>
-              </div>
-            </div>
+            <img src="/logo-satbayev.png" alt="Satbayev University" className="header-logo header-logo--satbayev" />
+          </div>
+          <div className="lang-tabs lang-tabs--header">
+            <button type="button" className={lang === 'ru' ? 'lang-tab active' : 'lang-tab'} onClick={() => setLang('ru')}>RU</button>
+            <button type="button" className={lang === 'en' ? 'lang-tab active' : 'lang-tab'} onClick={() => setLang('en')}>EN</button>
+            <button type="button" className={lang === 'kz' ? 'lang-tab active' : 'lang-tab'} onClick={() => setLang('kz')}>KZ</button>
           </div>
         </nav>
         <div className="header-hero">
