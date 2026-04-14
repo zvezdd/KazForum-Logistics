@@ -81,7 +81,8 @@ body {
   width: 100%;
   max-width: 72rem;
   margin: 0 auto;
-  padding: 0 2rem;
+  /* Reserve room for language buttons on wide screens */
+  padding: 0 10rem 0 2rem;
 }
 
 .header-logo {
@@ -194,6 +195,21 @@ body {
   letter-spacing: 0.01em;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
+}
+
+@media (max-width: 980px) {
+  .header-logos {
+    padding: 0 1rem;
+  }
+
+  .lang-tabs--header {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0 1rem;
+    justify-content: flex-end;
+  }
 }
 
 @media (max-width: 500px) {
