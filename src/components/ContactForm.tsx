@@ -21,6 +21,8 @@ const copy = {
     error: 'Произошла ошибка. Попробуйте позже.',
     configError:
       'База данных не подключена: при сборке сайта не были заданы переменные VITE_FIREBASE_* (например в GitHub Actions).',
+    timeoutError:
+      'Сервер не ответил вовремя. Проверьте интернет, VPN/блокировки или настройки API-ключа (ограничения по сайту) в Google Cloud.',
     phName: 'Иванов Иван Иванович',
     phOrg: 'Название организации',
     phCountry: 'Казахстан',
@@ -41,6 +43,8 @@ const copy = {
     error: 'Something went wrong. Please try again later.',
     configError:
       'Database is not configured: VITE_FIREBASE_* env vars were missing at build time (e.g. in GitHub Actions).',
+    timeoutError:
+      'The server did not respond in time. Check your network, VPN/firewall, or API key HTTP referrer restrictions in Google Cloud.',
     phName: 'John Smith',
     phOrg: 'Company / Organization',
     phCountry: 'Kazakhstan',
@@ -61,6 +65,8 @@ const copy = {
     error: 'Қате орын алды. Кейінірек көріңіз.',
     configError:
       'Дерекқор қосылмаған: VITE_FIREBASE_* айнымалылары жинақтау кезінде берілмеген (мысалы GitHub Actions).',
+    timeoutError:
+      'Сервер уақтылы жауап бермеді. Интернетті, VPN/блоктауларды немесе Google Cloud-тағы API кілті шектеулерін тексеріңіз.',
     phName: 'Иванов Иван Иванович',
     phOrg: 'Ұйым атауы',
     phCountry: 'Қазақстан',
@@ -68,6 +74,14 @@ const copy = {
     phPhone: '+7 705 000 00 00',
   },
 } as const
+
+const SUBMIT_TIMEOUT_MS = 35_000
+
+function rejectAfter(ms: number, message: string): Promise<never> {
+  return new Promise((_, reject) => {
+    setTimeout(() => reject(new Error(message)), ms)
+  })
+}
 
 export function ContactForm({ lang = 'ru' }: { lang?: Lang }) {
   const t = copy[lang]
@@ -97,15 +111,18 @@ export function ContactForm({ lang = 'ru' }: { lang?: Lang }) {
     setMessage(null)
     setLoading(true)
     try {
-      await addDoc(collection(db, 'registrations'), {
-        name: trimmedName,
-        organization: trimmedOrganization,
-        country: trimmedCountry,
-        email: trimmedEmail,
-        phone: trimmedPhone,
-        lang,
-        createdAt: serverTimestamp(),
-      })
+      await Promise.race([
+        addDoc(collection(db, 'registrations'), {
+          name: trimmedName,
+          organization: trimmedOrganization,
+          country: trimmedCountry,
+          email: trimmedEmail,
+          phone: trimmedPhone,
+          lang,
+          createdAt: serverTimestamp(),
+        }),
+        rejectAfter(SUBMIT_TIMEOUT_MS, t.timeoutError),
+      ])
       setMessage({ type: 'success', text: t.success })
       setName('')
       setOrganization('')

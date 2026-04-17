@@ -1,5 +1,5 @@
 import { getApp, getApps, initializeApp } from 'firebase/app'
-import { getFirestore, type Firestore } from 'firebase/firestore'
+import { getFirestore, initializeFirestore, type Firestore } from 'firebase/firestore'
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY as string | undefined,
@@ -25,6 +25,16 @@ function configIsComplete(
 
 export const firebaseReady = configIsComplete(firebaseConfig)
 
+function getDb(app: ReturnType<typeof getApp>): Firestore {
+  try {
+    return initializeFirestore(app, {
+      experimentalAutoDetectLongPolling: true,
+    })
+  } catch {
+    return getFirestore(app)
+  }
+}
+
 export const db: Firestore | null = firebaseReady
-  ? getFirestore(getApps().length === 0 ? initializeApp(firebaseConfig) : getApp())
+  ? getDb(getApps().length === 0 ? initializeApp(firebaseConfig) : getApp())
   : null
