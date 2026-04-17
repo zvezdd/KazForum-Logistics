@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import type { FormEvent } from 'react'
+import { FirebaseError } from 'firebase/app'
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
-import { db } from '../firebase'
+import { db, firebaseReady } from '../firebase'
 
 type Lang = 'ru' | 'en' | 'kz'
 
@@ -18,6 +19,8 @@ const copy = {
     required: 'Пожалуйста, заполните все поля.',
     success: 'Заявка успешно отправлена.',
     error: 'Произошла ошибка. Попробуйте позже.',
+    configError:
+      'База данных не подключена: при сборке сайта не были заданы переменные VITE_FIREBASE_* (например в GitHub Actions).',
     phName: 'Иванов Иван Иванович',
     phOrg: 'Название организации',
     phCountry: 'Казахстан',
@@ -36,6 +39,8 @@ const copy = {
     required: 'Please fill in all fields.',
     success: 'Registration submitted successfully.',
     error: 'Something went wrong. Please try again later.',
+    configError:
+      'Database is not configured: VITE_FIREBASE_* env vars were missing at build time (e.g. in GitHub Actions).',
     phName: 'John Smith',
     phOrg: 'Company / Organization',
     phCountry: 'Kazakhstan',
@@ -54,6 +59,8 @@ const copy = {
     required: 'Барлық өрістерді толтырыңыз.',
     success: 'Өтінім сәтті жіберілді.',
     error: 'Қате орын алды. Кейінірек көріңіз.',
+    configError:
+      'Дерекқор қосылмаған: VITE_FIREBASE_* айнымалылары жинақтау кезінде берілмеген (мысалы GitHub Actions).',
     phName: 'Иванов Иван Иванович',
     phOrg: 'Ұйым атауы',
     phCountry: 'Қазақстан',
@@ -83,6 +90,10 @@ export function ContactForm({ lang = 'ru' }: { lang?: Lang }) {
       setMessage({ type: 'error', text: t.required })
       return
     }
+    if (!firebaseReady || !db) {
+      setMessage({ type: 'error', text: t.configError })
+      return
+    }
     setMessage(null)
     setLoading(true)
     try {
@@ -102,10 +113,13 @@ export function ContactForm({ lang = 'ru' }: { lang?: Lang }) {
       setEmail('')
       setPhone('')
     } catch (err) {
-      setMessage({
-        type: 'error',
-        text: err instanceof Error ? err.message : t.error,
-      })
+      const text =
+        err instanceof FirebaseError
+          ? `${t.error} (${err.code})`
+          : err instanceof Error
+            ? err.message
+            : t.error
+      setMessage({ type: 'error', text })
     } finally {
       setLoading(false)
     }
