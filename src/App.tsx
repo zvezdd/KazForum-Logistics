@@ -100,23 +100,22 @@ function App() {
         <div className="block-inner">
           {lang === 'ru' && (
             <div className="info-content">
-              <p>Уважаемые коллеги! Приглашаем Вас принять участие в Казахстанско-Германском транспортно-логистическом форуме «Цифровизация, человеческий потенциал, транзитные возможности».</p>
-              <p>Форум состоится <strong>14 мая 2026 года</strong> в г. Алматы на базе <strong>Satbayev University</strong> (ул. Сатпаева, 22). Форум объединит представителей министерств, вузов и компаний транспортно-логистической отрасли Казахстана, отраслевых экспертов Германии и организаций стран Центральной Азии.</p>
-              <p>Мероприятие направлено на обсуждение цифровизации логистических систем, развития человеческого капитала и транзитного потенциала, а также на укрепление партнёрства между наукой, образованием и бизнесом.</p>
+              <p>Уважаемые дамы и господа! <br/>
+              Satbayev University (Казахстан) совместно с Bundesvereinigung Logistic (BVL, Германия) и Германским обществом по международному сотрудничеству (Deutsche Gesellschaft für Internationale Zusammenarbeit GmbH, GIZ) приглашает Вас принять участие в <strong>Первом Казахстанско-Германском транспортно-логистическом форуме «Цифровизация, человеческий капитал, транзитные возможности»</strong>, который состоится <strong>14 мая 2026 года</strong> в г. Алматы, Республика Казахстан, на базе Satbayev University по адресу: ул. Сатпаева, 22.
+              </p>
             </div>
           )}
           {lang === 'en' && (
             <div className="info-content">
-              <p>Dear colleagues! We invite you to take part in the Kazakhstan–Germany Transport and Logistics Forum "Digitalization, Human Potential, Transit Opportunities".</p>
-              <p>The Forum will be held on <strong>14 May 2026</strong> in Almaty at <strong>Satbayev University</strong> (22 Satpayev Street). It will bring together representatives of ministries, universities and transport and logistics companies from Kazakhstan, sector experts from Germany, and organizations from Central Asian countries.</p>
-              <p>The event will focus on digitalization of logistics systems, development of human capital and transit potential, and strengthening partnership between science, education and business.</p>
+              <p>Dear Ladies and Gentlemen, <br/> Satbayev University (Kazakhstan), in cooperation with Federal Association of Logistics (BVL Bundesvereinigung Logistik, Germany) and the Deutsche Gesellschaft für internationale Zusammenarbeit (giz), cordially invites you to participate in the <strong>1st Kazakh-German Transport and Logistics Forum “Digitalization, Human Capital, Transit Opportunities,”</strong> which will take place on <strong>May 14, 2026</strong>, in Almaty, Republic of Kazakhstan, at Satbayev University, 22 Satpayev Street.
+              </p>
             </div>
           )}
           {lang === 'kz' && (
             <div className="info-content">
-              <p>Құрметті әріптестер! Сізді «Цифрландыру, адами әлеует, транзиттік мүмкіндіктер» тақырыбындағы Қазақстан-Германия көлік-логистика форумына қатысуға шақырамыз.</p>
-              <p>Форум <strong>2026 жылдың 14 мамырында</strong> Алматы қаласында <strong>Satbayev University</strong> базасында (Сатпаев к., 22) өтеді. Форум Қазақстанның министрліктері, жоғары оқу орындары мен көлік-логистика саласының компаниялары өкілдерін, Германияның салалық сарапшылары мен Орталық Азия елдерінің ұйымдарын біріктіреді.</p>
-              <p>Іс-шара логистикалық жүйелерді цифрландыруды, адами капитал мен транзиттік әлеуетті дамытуды, сондай-ақ ғылым, білім және бизнес арасындағы серіктестікті нығайтуға бағытталған.</p>
+              <p>Құрметті ханымдар мен мырзалар! <br/>
+                  Satbayev University (Қазақстан) және Bundesvereinigung Logistik (BVL, Германия) Сіздерді <strong>2026 жылғы 14 мамырда</strong> Қазақстан Республикасы, Алматы қаласында, Satbayev University базасында (мекенжайы: Сәтбаев көшесі, 22) өтетін «Цифрландыру, адами капитал, транзиттік мүмкіндіктер» тақырыбындағы <strong>Бірінші Қазақстан-Германия көлік-логистика форумына қатысуға шақырады.</strong>
+</p>
             </div>
           )}
         </div>
