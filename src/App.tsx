@@ -88,9 +88,8 @@ function App() {
           </div>
         </nav>
         <div className="header-hero">
-          <p className="header-suptitle">{text.headerSupTitle}</p>
           <div className="header-accent" />
-          <h1 className="header-title">{text.headerTitle}</h1>
+          <h1 className="header-title">{text.headerSupTitle}</h1>
           <p className="header-slogan">{text.headerSlogan}</p>
           <div className="header-date-badge">
             {lang === 'ru' && '14 мая 2026 · Алматы, Satbayev University'}
