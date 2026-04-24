@@ -10,6 +10,7 @@ const PROGRAM_URL: Record<'ru' | 'en' | 'kz', string> = {
 
 const t = {
   ru: {
+    headerSupTitle: 'Первый Казахстанско-Германский транспортно-логистический форум',
     headerTitle: 'Казахстанско-Германский форум',
     headerSlogan: 'Цифровизация, человеческий потенциал, транзитные возможности',
     programTitle: 'Программа форума',
@@ -28,6 +29,7 @@ const t = {
     email: 'Email:',
   },
   en: {
+    headerSupTitle: '1st Kazakh-German Transport and Logistics Forum',
     headerTitle: 'Kazakhstan–Germany Forum',
     headerSlogan: 'Digitalization, human potential, transit opportunities',
     programTitle: 'Forum programme',
@@ -46,6 +48,7 @@ const t = {
     email: 'Email:',
   },
   kz: {
+    headerSupTitle: 'Алғашқы қазақ-неміс көлік және логистика форумы',
     headerTitle: 'Қазақстан-Германия форумы',
     headerSlogan: 'Цифрландыру, адами әлеует, транзиттік мүмкіндіктер',
     programTitle: 'Форум бағдарламасы',
@@ -85,6 +88,7 @@ function App() {
           </div>
         </nav>
         <div className="header-hero">
+          <p className="header-suptitle">{text.headerSupTitle}</p>
           <div className="header-accent" />
           <h1 className="header-title">{text.headerTitle}</h1>
           <p className="header-slogan">{text.headerSlogan}</p>
