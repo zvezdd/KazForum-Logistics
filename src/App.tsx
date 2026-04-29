@@ -160,7 +160,6 @@ function App() {
         <div className="block-inner">
           <h2 className="block-title">{text.partnersTitle}</h2>
           <div className="partners-row">
-            <img src="/logo-ministry.png" alt="Министерство транспорта РК" className="partner-logo" />
             <img src="/logo-bvl.png" alt="BVL Bundesvereinigung Logistik" className="partner-logo" />
             <img src="/logo-kidi.png" alt="Kazakhstan Industry Development Institute" className="partner-logo" />
             <img src="/logo-german-cooperation.png" alt="German Cooperation" className="partner-logo" />
