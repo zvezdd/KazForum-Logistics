@@ -12,7 +12,7 @@ const t = {
   ru: {
     headerSupTitle: 'Первый Казахстанско-Германский транспортно-логистический форум',
     headerTitle: 'Казахстанско-Германский форум',
-    headerSlogan: 'Цифровизация, человеческий потенциал, транзитные возможности',
+    headerSlogan: 'Цифровизация, человеческий капитал, транзитные возможности',
     programTitle: 'Программа форума',
     programDesc: 'Скачайте приглашение на форум.',
     downloadBtn: 'Скачать приглашение (RU)',
@@ -21,7 +21,8 @@ const t = {
     partnersTitle: 'Партнёры',
     partnersAlt: 'Партнёры форума',
     directionsTitle: 'Схема проезда',
-    directionsAddress: 'Satbayev University, конференц-зал, ул. Сатпаева, 22, г. Алматы',
+    directionsAddress:
+      'Уважаемые дамы и господа!\nSatbayev University (Казахстан) совместно с Bundesvereinigung Logistic (BVL, Германия) и Германским обществом по международному сотрудничеству (Deutsche Gesellschaft fur Internationale Zusammenarbeit GmbH, GIZ) приглашает Вас принять участие в Первом Казахстанско-Германском транспортно-логистическом форуме «Цифровизация, человеческий капитал, транзитные возможности», который состоится 14 мая 2026 года в г. Алматы, Республика Казахстан, на базе Satbayev University по адресу: ул. Сатпаева, 22. Аудитория 343 -Главный Учебный Корпус.\n\nSatbayev University, Аудитория 343 -Главный Учебный Корпус, ул. Сатпаева, 22, г. Алматы',
     contactsTitle: 'Контакты',
     contactPerson: 'Контактное лицо:',
     tel: 'Тел:',
@@ -29,9 +30,9 @@ const t = {
     email: 'Email:',
   },
   en: {
-    headerSupTitle: '1st Kazakh-German Transport and Logistics Forum',
+    headerSupTitle: 'First Kazakhstan-Germany Transport and Logistics Forum',
     headerTitle: 'Kazakhstan–Germany Forum',
-    headerSlogan: 'Digitalization, human potential, transit opportunities',
+    headerSlogan: 'Digitalization, Human Capital, Transit Opportunities',
     programTitle: 'Forum programme',
     programDesc: 'Download the forum invitation.',
     downloadBtn: 'Download invitation (EN)',
@@ -40,7 +41,8 @@ const t = {
     partnersTitle: 'Partners',
     partnersAlt: 'Forum partners',
     directionsTitle: 'How to get there',
-    directionsAddress: 'Satbayev University, conference hall, 22 Satpayev St., Almaty',
+    directionsAddress:
+      'Dear Ladies and Gentlemen,\nSatbayev University (Kazakhstan), in cooperation with Federal Association of Logistics (BVL Bundesvereinigung Logistik, Germany) and the Deutsche Gesellschaft fur internationale Zusammenarbeit (giz), cordially invites you to participate in the 1st Kazakh-German Transport and Logistics Forum "Digitalization, Human Capital, Transit Opportunities," which will take place on May 14, 2026, in Almaty, Republic of Kazakhstan, at Satbayev University, 22 Satpayev Street. Auditorium 343 -Main Academic Building.\n\nSatbayev University, Auditorium 343 -Main Academic Building, 22 Satpayev St., Almaty',
     contactsTitle: 'Contacts',
     contactPerson: 'Contact person:',
     tel: 'Phone:',
@@ -48,9 +50,9 @@ const t = {
     email: 'Email:',
   },
   kz: {
-    headerSupTitle: 'Алғашқы қазақ-неміс көлік және логистика форумы',
+    headerSupTitle: 'Алғашқы Қазақстан-Германия көлік және логистика форумы',
     headerTitle: 'Қазақстан-Германия форумы',
-    headerSlogan: 'Цифрландыру, адами әлеует, транзиттік мүмкіндіктер',
+    headerSlogan: 'Цифрландыру, адами капитал, транзиттік мүмкіндіктер',
     programTitle: 'Форум бағдарламасы',
     programDesc: 'Форумға шақыруды жүктеп алыңыз.',
     downloadBtn: 'Шақыруды жүктеу (KZ)',
@@ -59,7 +61,8 @@ const t = {
     partnersTitle: 'Серіктестер',
     partnersAlt: 'Форум серіктестері',
     directionsTitle: 'Жол сызбасы',
-    directionsAddress: 'Satbayev University, конференц-зал, Сатпаев к., 22, Алматы қ.',
+    directionsAddress:
+      'Құрметті ханымдар мен мырзалар!\nSatbayev University (Қазақстан) және Bundesvereinigung Logistik (BVL, Германия) Сіздерді 2026 жылғы 14 мамырда Қазақстан Республикасы, Алматы қаласында, Satbayev University базасында (мекенжайы: Сәтбаев көшесі, 22. Аудитория 343- Бас Оқу Ғимараты) өтетін «Цифрландыру, адами капитал, транзиттік мүмкіндіктер» тақырыбындағы Бірінші Қазақстан-Германия көлік-логистика форумына қатысуға шақырады.\n\nSatbayev University, Аудитория 343- Бас Оқу Ғимараты, Сатпаев к., 22, Алматы қ.',
     contactsTitle: 'Байланыс',
     contactPerson: 'Байланыс тұлғасы:',
     tel: 'Тел:',
@@ -170,7 +173,7 @@ function App() {
       <section className="block block-directions" id="directions">
         <div className="block-inner">
           <h2 className="block-title">{text.directionsTitle}</h2>
-          <p className="block-desc">{text.directionsAddress}</p>
+          <p className="block-desc block-desc--multiline">{text.directionsAddress}</p>
           <div className="directions-map">
             {lang === 'ru' && <img src="/map-ru.svg" alt="Схема проезда" className="directions-map-img" />}
             {lang === 'en' && <img src="/map-en.svg" alt="How to get there" className="directions-map-img" />}

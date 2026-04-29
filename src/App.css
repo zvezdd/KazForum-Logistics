@@ -267,6 +267,10 @@ body {
   font-size: 1rem;
 }
 
+.block-desc--multiline {
+  white-space: pre-line;
+}
+
 /* Чередование фона секций */
 .block-info {
   background: #f8fbfd;
