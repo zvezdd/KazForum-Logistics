@@ -3,9 +3,9 @@ import { ContactForm } from './components/ContactForm'
 import './App.css'
 
 const PROGRAM_URL: Record<'ru' | 'en' | 'kz', string> = {
-  ru: '/program-ru.pptx',
-  en: '/program-en.pptx',
-  kz: '/program-kz.pptx',
+  ru: '/RU_Invitation.pdf',
+  en: '/ENG_Invitation.pdf',
+  kz: '/KAZ_Invitation.pdf',
 }
 
 const t = {
@@ -24,6 +24,7 @@ const t = {
     directionsAddress: 'Satbayev University, Аудитория 343 -Главный Учебный Корпус, ул. Сатпаева, 22, г. Алматы',
     contactsTitle: 'Контакты',
     contactPerson: 'Контактное лицо:',
+    secondContactName: 'Жазира Тымбаева',
     tel: 'Тел:',
     whatsapp: 'WhatsApp:',
     email: 'Email:',
@@ -43,6 +44,7 @@ const t = {
     directionsAddress: 'Satbayev University, Auditorium 343 -Main Academic Building, 22 Satpayev St., Almaty',
     contactsTitle: 'Contacts',
     contactPerson: 'Contact person:',
+    secondContactName: 'Zhazira Tymbayeva',
     tel: 'Phone:',
     whatsapp: 'WhatsApp:',
     email: 'Email:',
@@ -62,6 +64,7 @@ const t = {
     directionsAddress: 'Satbayev University, Аудитория 343- Бас Оқу Ғимараты, Сатпаев к., 22, Алматы қ.',
     contactsTitle: 'Байланыс',
     contactPerson: 'Байланыс тұлғасы:',
+    secondContactName: 'Жазира Тымбаева',
     tel: 'Тел:',
     whatsapp: 'WhatsApp:',
     email: 'Email:',
@@ -186,6 +189,10 @@ function App() {
           <p className="footer-contact"><strong>{text.tel}</strong> <a href="tel:+77057696077">+7 705 769 6077</a></p>
           <p className="footer-contact"><strong>{text.whatsapp}</strong> <a href="https://wa.me/77057696077">+7 705 769 6077</a></p>
           <p className="footer-contact"><strong>{text.email}</strong> <a href="mailto:s.bolatkyzy@satbayev.university">s.bolatkyzy@satbayev.university</a></p>
+          <p className="footer-contact"><strong>{text.contactPerson}</strong> {text.secondContactName}</p>
+          <p className="footer-contact"><strong>{text.tel}</strong> <a href="tel:+77017867603">+7 701 786 7603</a></p>
+          <p className="footer-contact"><strong>{text.whatsapp}</strong> <a href="https://wa.me/77017867603">+7 701 786 7603</a></p>
+          <p className="footer-contact"><strong>{text.email}</strong> <a href="mailto:z.tymbayeva@satbayev.university">z.tymbayeva@satbayev.university</a></p>
         </div>
       </footer>
     </div>
