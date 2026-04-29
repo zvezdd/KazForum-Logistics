@@ -24,6 +24,7 @@ const t = {
     directionsAddress: 'Satbayev University, Аудитория 343 -Главный Учебный Корпус, ул. Сатпаева, 22, г. Алматы',
     contactsTitle: 'Контакты',
     contactPerson: 'Контактное лицо:',
+    firstContactName: 'Салтанат Болатқызы',
     secondContactName: 'Жазира Тымбаева',
     tel: 'Тел:',
     whatsapp: 'WhatsApp:',
@@ -44,6 +45,7 @@ const t = {
     directionsAddress: 'Satbayev University, Auditorium 343 -Main Academic Building, 22 Satpayev St., Almaty',
     contactsTitle: 'Contacts',
     contactPerson: 'Contact person:',
+    firstContactName: 'Saltanat Bolatkyzy',
     secondContactName: 'Zhazira Tymbayeva',
     tel: 'Phone:',
     whatsapp: 'WhatsApp:',
@@ -64,6 +66,7 @@ const t = {
     directionsAddress: 'Satbayev University, Аудитория 343- Бас Оқу Ғимараты, Сатпаев к., 22, Алматы қ.',
     contactsTitle: 'Байланыс',
     contactPerson: 'Байланыс тұлғасы:',
+    firstContactName: 'Салтанат Болатқызы',
     secondContactName: 'Жазира Тымбаева',
     tel: 'Тел:',
     whatsapp: 'WhatsApp:',
@@ -184,7 +187,7 @@ function App() {
       <footer className="footer">
         <div className="footer-inner">
           <h2 className="footer-title">{text.contactsTitle}</h2>
-          <p className="footer-contact"><strong>{text.contactPerson}</strong> Салтанат Болатқызы</p>
+          <p className="footer-contact"><strong>{text.contactPerson}</strong> {text.firstContactName}</p>
           <p className="footer-contact"><strong>{text.tel}</strong> <a href="tel:+77057696077">+7 705 769 6077</a></p>
           <p className="footer-contact"><strong>{text.whatsapp}</strong> <a href="https://wa.me/77057696077">+7 705 769 6077</a></p>
           <p className="footer-contact"><strong>{text.email}</strong> <a href="mailto:s.bolatkyzy@satbayev.university">s.bolatkyzy@satbayev.university</a></p>
