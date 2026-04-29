@@ -21,8 +21,7 @@ const t = {
     partnersTitle: 'Партнёры',
     partnersAlt: 'Партнёры форума',
     directionsTitle: 'Схема проезда',
-    directionsAddress:
-      'Уважаемые дамы и господа!\nSatbayev University (Казахстан) совместно с Bundesvereinigung Logistic (BVL, Германия) и Германским обществом по международному сотрудничеству (Deutsche Gesellschaft fur Internationale Zusammenarbeit GmbH, GIZ) приглашает Вас принять участие в Первом Казахстанско-Германском транспортно-логистическом форуме «Цифровизация, человеческий капитал, транзитные возможности», который состоится 14 мая 2026 года в г. Алматы, Республика Казахстан, на базе Satbayev University по адресу: ул. Сатпаева, 22. Аудитория 343 -Главный Учебный Корпус.\n\nSatbayev University, Аудитория 343 -Главный Учебный Корпус, ул. Сатпаева, 22, г. Алматы',
+    directionsAddress: 'Satbayev University, Аудитория 343 -Главный Учебный Корпус, ул. Сатпаева, 22, г. Алматы',
     contactsTitle: 'Контакты',
     contactPerson: 'Контактное лицо:',
     tel: 'Тел:',
@@ -41,8 +40,7 @@ const t = {
     partnersTitle: 'Partners',
     partnersAlt: 'Forum partners',
     directionsTitle: 'How to get there',
-    directionsAddress:
-      'Dear Ladies and Gentlemen,\nSatbayev University (Kazakhstan), in cooperation with Federal Association of Logistics (BVL Bundesvereinigung Logistik, Germany) and the Deutsche Gesellschaft fur internationale Zusammenarbeit (giz), cordially invites you to participate in the 1st Kazakh-German Transport and Logistics Forum "Digitalization, Human Capital, Transit Opportunities," which will take place on May 14, 2026, in Almaty, Republic of Kazakhstan, at Satbayev University, 22 Satpayev Street. Auditorium 343 -Main Academic Building.\n\nSatbayev University, Auditorium 343 -Main Academic Building, 22 Satpayev St., Almaty',
+    directionsAddress: 'Satbayev University, Auditorium 343 -Main Academic Building, 22 Satpayev St., Almaty',
     contactsTitle: 'Contacts',
     contactPerson: 'Contact person:',
     tel: 'Phone:',
@@ -61,8 +59,7 @@ const t = {
     partnersTitle: 'Серіктестер',
     partnersAlt: 'Форум серіктестері',
     directionsTitle: 'Жол сызбасы',
-    directionsAddress:
-      'Құрметті ханымдар мен мырзалар!\nSatbayev University (Қазақстан) және Bundesvereinigung Logistik (BVL, Германия) Сіздерді 2026 жылғы 14 мамырда Қазақстан Республикасы, Алматы қаласында, Satbayev University базасында (мекенжайы: Сәтбаев көшесі, 22. Аудитория 343- Бас Оқу Ғимараты) өтетін «Цифрландыру, адами капитал, транзиттік мүмкіндіктер» тақырыбындағы Бірінші Қазақстан-Германия көлік-логистика форумына қатысуға шақырады.\n\nSatbayev University, Аудитория 343- Бас Оқу Ғимараты, Сатпаев к., 22, Алматы қ.',
+    directionsAddress: 'Satbayev University, Аудитория 343- Бас Оқу Ғимараты, Сатпаев к., 22, Алматы қ.',
     contactsTitle: 'Байланыс',
     contactPerson: 'Байланыс тұлғасы:',
     tel: 'Тел:',
@@ -107,20 +104,20 @@ function App() {
           {lang === 'ru' && (
             <div className="info-content">
               <p>Уважаемые дамы и господа! <br/>
-              Satbayev University (Казахстан) совместно с Bundesvereinigung Logistic (BVL, Германия) и Германским обществом по международному сотрудничеству (Deutsche Gesellschaft für Internationale Zusammenarbeit GmbH, GIZ) приглашает Вас принять участие в <strong>Первом Казахстанско-Германском транспортно-логистическом форуме «Цифровизация, человеческий капитал, транзитные возможности»</strong>, который состоится <strong>14 мая 2026 года</strong> в г. Алматы, Республика Казахстан, на базе Satbayev University по адресу: ул. Сатпаева, 22.
+              Satbayev University (Казахстан) совместно с Bundesvereinigung Logistic (BVL, Германия) и Германским обществом по международному сотрудничеству (Deutsche Gesellschaft für Internationale Zusammenarbeit GmbH, GIZ) приглашает Вас принять участие в <strong>Первом Казахстанско-Германском транспортно-логистическом форуме «Цифровизация, человеческий капитал, транзитные возможности»</strong>, который состоится <strong>14 мая 2026 года</strong> в г. Алматы, Республика Казахстан, на базе Satbayev University по адресу: ул. Сатпаева, 22. <strong>Аудитория 343 -Главный Учебный Корпус.</strong>
               </p>
             </div>
           )}
           {lang === 'en' && (
             <div className="info-content">
-              <p>Dear Ladies and Gentlemen, <br/> Satbayev University (Kazakhstan), in cooperation with Federal Association of Logistics (BVL Bundesvereinigung Logistik, Germany) and the Deutsche Gesellschaft für internationale Zusammenarbeit (giz), cordially invites you to participate in the <strong>1st Kazakh-German Transport and Logistics Forum “Digitalization, Human Capital, Transit Opportunities,”</strong> which will take place on <strong>May 14, 2026</strong>, in Almaty, Republic of Kazakhstan, at Satbayev University, 22 Satpayev Street.
+              <p>Dear Ladies and Gentlemen, <br/> Satbayev University (Kazakhstan), in cooperation with Federal Association of Logistics (BVL Bundesvereinigung Logistik, Germany) and the Deutsche Gesellschaft für internationale Zusammenarbeit (giz), cordially invites you to participate in the <strong>1st Kazakh-German Transport and Logistics Forum “Digitalization, Human Capital, Transit Opportunities,”</strong> which will take place on <strong>May 14, 2026</strong>, in Almaty, Republic of Kazakhstan, at Satbayev University, 22 Satpayev Street. <strong>Auditorium 343 -Main Academic Building.</strong>
               </p>
             </div>
           )}
           {lang === 'kz' && (
             <div className="info-content">
               <p>Құрметті ханымдар мен мырзалар! <br/>
-                  Satbayev University (Қазақстан) және Bundesvereinigung Logistik (BVL, Германия) Сіздерді <strong>2026 жылғы 14 мамырда</strong> Қазақстан Республикасы, Алматы қаласында, Satbayev University базасында (мекенжайы: Сәтбаев көшесі, 22) өтетін «Цифрландыру, адами капитал, транзиттік мүмкіндіктер» тақырыбындағы <strong>Бірінші Қазақстан-Германия көлік-логистика форумына қатысуға шақырады.</strong>
+                  Satbayev University (Қазақстан) және Bundesvereinigung Logistik (BVL, Германия) Сіздерді <strong>2026 жылғы 14 мамырда</strong> Қазақстан Республикасы, Алматы қаласында, Satbayev University базасында (мекенжайы: Сәтбаев көшесі, 22. <strong>Аудитория 343- Бас Оқу Ғимараты</strong> ) өтетін «Цифрландыру, адами капитал, транзиттік мүмкіндіктер» тақырыбындағы <strong>Бірінші Қазақстан-Германия көлік-логистика форумына</strong> қатысуға шақырады.
 </p>
             </div>
           )}
