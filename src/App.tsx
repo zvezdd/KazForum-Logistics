@@ -184,7 +184,7 @@ function App() {
       <footer className="footer">
         <div className="footer-inner">
           <h2 className="footer-title">{text.contactsTitle}</h2>
-          <p className="footer-contact"><strong>{text.contactPerson}</strong> Болатқызы Салтанат</p>
+          <p className="footer-contact"><strong>{text.contactPerson}</strong> Салтанат Болатқызы</p>
           <p className="footer-contact"><strong>{text.tel}</strong> <a href="tel:+77057696077">+7 705 769 6077</a></p>
           <p className="footer-contact"><strong>{text.whatsapp}</strong> <a href="https://wa.me/77057696077">+7 705 769 6077</a></p>
           <p className="footer-contact"><strong>{text.email}</strong> <a href="mailto:s.bolatkyzy@satbayev.university">s.bolatkyzy@satbayev.university</a></p>
