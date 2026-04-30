@@ -14,6 +14,7 @@ const copy = {
     country: 'Страна',
     email: 'Электронная почта',
     phone: 'Номер телефона',
+    b2b: 'B2B встречи',
     submit: 'Зарегистрироваться',
     submitting: 'Отправка…',
     required: 'Пожалуйста, заполните все поля.',
@@ -28,6 +29,7 @@ const copy = {
     phCountry: 'Казахстан',
     phEmail: 'example@mail.com',
     phPhone: '+7 705 000 00 00',
+    phB2b: '',
   },
   en: {
     title: 'Forum registration',
@@ -36,6 +38,7 @@ const copy = {
     country: 'Country',
     email: 'Email',
     phone: 'Phone number',
+    b2b: 'B2B meetings',
     submit: 'Register',
     submitting: 'Submitting…',
     required: 'Please fill in all fields.',
@@ -50,6 +53,7 @@ const copy = {
     phCountry: 'Kazakhstan',
     phEmail: 'example@mail.com',
     phPhone: '+7 705 000 00 00',
+    phB2b: 'Optional',
   },
   kz: {
     title: 'Форумға тіркелу',
@@ -58,6 +62,7 @@ const copy = {
     country: 'Ел',
     email: 'Электрондық пошта',
     phone: 'Телефон нөмірі',
+    b2b: 'B2B кездесулері',
     submit: 'Тіркелу',
     submitting: 'Жіберілуде…',
     required: 'Барлық өрістерді толтырыңыз.',
@@ -72,6 +77,7 @@ const copy = {
     phCountry: 'Қазақстан',
     phEmail: 'example@mail.com',
     phPhone: '+7 705 000 00 00',
+    phB2b: 'Міндетті емес',
   },
 } as const
 
@@ -90,6 +96,7 @@ export function ContactForm({ lang = 'ru' }: { lang?: Lang }) {
   const [country, setCountry] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
+  const [b2bMeetings, setB2bMeetings] = useState('')
   const [loading, setLoading] = useState(false)
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null)
 
@@ -100,6 +107,7 @@ export function ContactForm({ lang = 'ru' }: { lang?: Lang }) {
     const trimmedCountry = country.trim()
     const trimmedEmail = email.trim()
     const trimmedPhone = phone.trim()
+    const trimmedB2bMeetings = b2bMeetings.trim()
     if (!trimmedName || !trimmedOrganization || !trimmedCountry || !trimmedEmail || !trimmedPhone) {
       setMessage({ type: 'error', text: t.required })
       return
@@ -118,6 +126,7 @@ export function ContactForm({ lang = 'ru' }: { lang?: Lang }) {
           country: trimmedCountry,
           email: trimmedEmail,
           phone: trimmedPhone,
+          b2bMeetings: trimmedB2bMeetings,
           lang,
           createdAt: serverTimestamp(),
         }),
@@ -129,6 +138,7 @@ export function ContactForm({ lang = 'ru' }: { lang?: Lang }) {
       setCountry('')
       setEmail('')
       setPhone('')
+      setB2bMeetings('')
     } catch (err) {
       const text =
         err instanceof FirebaseError
@@ -205,6 +215,17 @@ export function ContactForm({ lang = 'ru' }: { lang?: Lang }) {
           disabled={loading}
           autoComplete="tel"
           placeholder={t.phPhone}
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="b2bMeetings">{t.b2b}</label>
+        <input
+          id="b2bMeetings"
+          type="text"
+          value={b2bMeetings}
+          onChange={(e) => setB2bMeetings(e.target.value)}
+          disabled={loading}
+          placeholder={t.phB2b}
         />
       </div>
       {message && (

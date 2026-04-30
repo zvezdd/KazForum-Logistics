@@ -444,7 +444,8 @@ body {
   .registration-form {
     grid-template-columns: 1fr 1fr;
   }
-  .registration-form .form-group:nth-child(5) {
+  .registration-form .form-group:nth-child(5),
+  .registration-form .form-group:nth-child(6) {
     grid-column: 1 / -1;
   }
   .registration-form .form-message,
